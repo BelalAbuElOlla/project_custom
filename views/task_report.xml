@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Custom report.-->
+<odoo>
+<data>
+<template id="task_details_report">
+    <t t-call="web.html_container">
+       <t t-call="web.external_layout">
+	    <div class="page">
+		<div class="row">
+                        <tr>
+                          <th>Task Details</th>
+                        </tr>
+		    <table class="table table-striped">
+    			<thead>
+      			  <tr style="border-bottom:10px black;border-style: solid;">
+        		    <th>Task Title</th>
+                            <th>category</th>
+                            <th>Assigned to</th>
+                            <th>Weight</th>
+                            <th>Prority</th>
+                            <th>Status</th>
+      			  </tr>
+    			</thead>
+    			<tbody>
+      			  <tr t-foreach="docs" t-as="e">
+                            <td>
+				<t t-if='e.name'>
+                                   <span t-field="e.name"/>
+                                </t>
+                                <t t-if="not e.name">-
+                                </t>
+                            </td>
+                            <td>
+				<t t-if='e.project_id'>
+                                   <span t-field="e.project_id"/>
+                                </t>
+                                <t t-if="not e.project_id">-
+                                </t>
+                            </td>
+                            <td>
+				<t t-if='e.user_id'>
+                                   <span t-field="e.user_id"/>
+                                </t>
+                                <t t-if="not e.user_id">-
+                                </t>
+                            </td>
+                            <td>
+				<t t-if='e.weight'>
+                                   <span t-field="e.weight"/>
+                                </t>
+                                <t t-if="not e.weight">-
+                                </t>
+                            </td>
+                            <td>
+				<t t-if='e.priority_list'>
+                                   <span t-field="e.priority_list"/>
+                                </t>
+                                <t t-if="not e.priority_list">-
+                                </t>
+                            </td>
+                            <td>
+				<t t-if='e.status_list'>
+                                   <span t-field="e.status_list"/>
+                                </t>
+                                <t t-if="not e.status_list">-
+                                </t>
+                            </td>
+      			</tr>
+		      </tbody>
+		    </table>
+		</div>
+	    </div>
+        </t>
+    </t>
+</template>
+</data>
+</odoo>

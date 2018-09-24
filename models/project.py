@@ -29,5 +29,5 @@ class TaskCustom(models.Model):
     @api.multi
     def do_done(self):
         for task in self: 
-            task.status_list = '2'
+            task.status_list = '3'
         return True 

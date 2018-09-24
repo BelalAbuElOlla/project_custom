@@ -13,5 +13,10 @@
     ],
     "data": ["views/project_custom.xml",
 	     "views/project_server_action.xml",
+	     "views/task_report.xml",
+             "views/project_report.xml",
+             "report/task_qweb_report.xml",
+             "report/project_qweb_report.xml",
+             
 	    ],
 }
